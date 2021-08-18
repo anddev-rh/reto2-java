@@ -25,6 +25,37 @@ public class Personaje {
 
     public void golpear(Personaje p) {
 
+        double golpe = damage / calcularDistanciaRespectoPersonaje(p);
+
+        p.recibirImpacto(golpe);
+
+    }
+
+    public void recibirImpacto(double d) {
+        vida = vida - d;
+    }
+
+    public double calcularDistanciaRespectoPersonaje(Personaje p) {
+
+        double disX = 0;
+        double disY = 0;
+
+        if (posicionX > p.getPosicionX()) {
+            disX = posicionX - p.getPosicionX();
+        }
+        if (posicionX < p.getPosicionX()) {
+            disX = p.getPosicionX() - posicionX;
+        }
+
+        if (posicionY > p.getPosicionY()) {
+            disY = posicionY - p.getPosicionY();
+        }
+
+        if (posicionY < p.getPosicionY()) {
+            disY = p.getPosicionY() - posicionY;
+        }
+
+        return disX + disY;
     }
 
     // Inserte acpa los setters y getters
