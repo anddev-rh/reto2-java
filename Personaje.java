@@ -32,7 +32,9 @@ public class Personaje {
     }
 
     public void recibirImpacto(double d) {
+
         vida = vida - d;
+
     }
 
     public double calcularDistanciaRespectoPersonaje(Personaje p) {
@@ -105,6 +107,12 @@ public class Personaje {
     }
 
     public void setVida(double vida) {
-        this.vida = vida;
+
+        if (vida < 0) {
+            this.vida = 0;
+        } else {
+            this.vida = vida;
+        }
+
     }
 }

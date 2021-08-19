@@ -7,7 +7,7 @@ public class Jugador extends Personaje {
   // Inserte acá el método constructor
 
   public Jugador(String nombre, char sexo, double posicionX, double posicionY, double damage) {
-    super(nombre, sexo, damage, damage, damage);
+    super(nombre, sexo, posicionX, posicionY, damage);
     this.setNumeroBotiquines(0);
   }
 
@@ -44,8 +44,9 @@ public class Jugador extends Personaje {
     setPosicionY(getPosicionY() - d);
   }
 
-  @Override
+  // @Override
   public void golpear(Enemigo p) {
+    super.golpear(p);
     p.evolucionar();
   }
 

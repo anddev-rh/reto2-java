@@ -1,14 +1,34 @@
 public class Main {
     public static void main(String[] args) {
-        Jugador mario = new Jugador("mario", 'm', 0, 10, 80);
-        Personaje yoshi = new Personaje("yoshis", 'm', 2, 5, 80);
+        Jugador j = new Jugador("Explorador", 'm', 0, 5, 100);
+        Enemigo e = new Enemigo("Bitter", 'f', 0, 0, 80);
 
-        mario.recogerBotiquin();
-        mario.recogerBotiquin();
-        mario.usarBotiquin();
+        j.golpear(e);
+        j.golpear(e);
+        j.moverDerecha(10);
+        j.moverAbajo(5);
 
-        System.out.println(mario.getNumeroBotiquines());
-        System.out.println(mario.getVida());
+        e.golpear(j);
+        e.golpear(j);
+        j.recogerBotiquin();
+
+        j.usarBotiquin();
+        j.usarBotiquin();
+        j.golpear(e);
+        j.golpear(e);
+        j.golpear(e);
+
+        e.golpear(j);
+        e.golpear(j);
+
+        j.golpear(e);
+        j.golpear(e);
+
+        j.golpear(e);
+        j.golpear(e);
+        j.golpear(e);
+
+        // System.out.println(mario.getVida());
 
         // mario.golpear(yoshi);
 
